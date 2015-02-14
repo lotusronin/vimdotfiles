@@ -1,0 +1,18 @@
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/colorschemes"]
+	path = bundle/colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline
+[submodule "bundle/vim-scala"]
+	path = bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
+[submodule "bundle/ag"]
+	path = bundle/ag
+	url = https://github.com/rking/ag.vim
+[submodule "bundle/rust.vim"]
+	path = bundle/rust.vim
+	url = https://github.com/wting/rust.vim.git
