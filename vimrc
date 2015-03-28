@@ -99,3 +99,30 @@ syntax on
 
 colorscheme Chasing_Logic
 set laststatus=2
+
+" syntax
+au BufRead,BufNewFile *.as set syntax=cpp
+au BufRead,BufNewFile *.angelscript set syntax=cpp
+
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+
+let g:neocomplcache_dictionary_filetype_lists = {
+            \ 'default' : '',
+            \ 'vimshell' : $HOME.'/.vimshell_hist',
+            \ 'cpp' : $HOME.'/.cpp_completions'
+            \}
+
+inoremap <expr><C-g>    neocomplcache#undo_completion()
+inoremap <expr><C-l>    neocomplcache#complete_common_string()
+" TAB completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+
+
+" Remappings for FSwitch
+" -----------------------
+nmap <silent> ,fh :FSHere<CR>
+nmap <silent> ,fl :FSSplitLeft<CR>
+nmap <silent> ,fr :FSSplitRight<CR>
+
