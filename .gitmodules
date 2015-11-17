@@ -25,3 +25,6 @@
 [submodule "bundle/syntax"]
 	path = bundle/syntax
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
+[submodule "bundle/kraken.vim"]
+	path = bundle/kraken.vim
+	url = https://github.com/Limvot/kraken.vim.git
