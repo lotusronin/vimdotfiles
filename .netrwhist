@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/marcus/Programming/Platformer/src'
-let g:netrw_dirhist_2='/home/marcus/Documents/Spring2015/cs 2200/prj3/student-src'

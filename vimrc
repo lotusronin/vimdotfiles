@@ -107,6 +107,52 @@ au BufRead,BufNewFile *.as set syntax=cpp
 au BufRead,BufNewFile *.angelscript set syntax=cpp
 au BufRead,BufNewFile *.krak set syntax=kraken
 
+" Code Folding
+set foldmethod=syntax
+set nofoldenable
+let c_no_comment_fold=1
+
+" TagBar
+" ===========
+nmap <F8> :TagbarToggle<CR>
+autocmd FileType c call Ttoggle()
+autocmd FileType cpp call Ttoggle()
+
+function! Ttoggle()
+    :call tagbar#autoopen(0)
+endfunction
+
+" Neosnippets - Code Snippets
+let g:neosnippet#disable_runtime_snippets = {
+\ '_' : 1,
+\ }
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+" Plugin key-mappings.
+imap <Leader>e     <Plug>(neosnippet_expand_or_jump)
+smap <Leader>e     <Plug>(neosnippet_expand_or_jump)
+xmap <Leader>e     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
@@ -174,14 +220,19 @@ nmap <silent> ,fr :FSSplitRight<CR>
 
 " shortcuts for other commands
 " ----------------------------
-nmap <silent> <Leader>t :tabnew<CR>
+nmap <silent> <Leader>t :tabnew<Space>
 nmap <silent> <Leader>. :tabn<CR>
 nmap <silent> <Leader>, :tabp<CR>
+nmap <silent> <Leader>q :q<CR>
 nmap <Leader>a :Ag<Space>
 
 
-
-
+" Splits Navigation
+" -------------------
+nmap <silent> <A-i> :wincmd k<CR>
+nmap <silent> <A-k> :wincmd j<CR>
+nmap <silent> <A-j> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>
 
 
 " Syntastic
@@ -204,6 +255,7 @@ let g:syntastic_mode_map = {
     \ "active_filetypes": [],
     \ "passive_filetypes": [] }
 
+nmap <silent> <Leader>s :SyntasticCheck<CR>
 
 
 " Airline
