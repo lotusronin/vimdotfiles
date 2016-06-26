@@ -52,3 +52,6 @@
 [submodule "bundle/neuro.vim"]
 	path = bundle/neuro.vim
 	url = git@github.com:lotusronin/neuro.vim.git
+[submodule "bundle/vim-lldb"]
+	path = bundle/vim-lldb
+	url = git@github.com:gilligan/vim-lldb.git
