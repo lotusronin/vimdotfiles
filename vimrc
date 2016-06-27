@@ -153,63 +153,13 @@ endif
 
 
 
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase
-let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" YCM
+let g:ycm_server_python_interpreter='/usr/sbin/python2'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 
-let g:neocomplcache_dictionary_filetype_lists = {
-            \ 'default' : '',
-            \ 'vimshell' : $HOME.'/.vimshell_hist',
-            \ 'cpp' : $HOME.'/.cpp_completions'
-            \}
-" Define keyword
-if !exists('g:neocomplcache_keyword_patterns')
-    let g:neocomplcache_keyword_patterns = {}
-endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>    neocomplcache#undo_completion()
-inoremap <expr><C-l>    neocomplcache#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return neocomplcache#smart_close_popup() . "\<CR>"
-endfunction
-" tab completion
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup() . "\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup() . "\<C-h>"
-inoremap <expr><C-y> neocomplcache#close_popup()
-inoremap <expr><C-e> neocomplcache#cancel_popup()
-
-" For cursor moving in insert mode(Not recommended)
-inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 
 "Enable omni completion
 autocmd FileType python setlocal omnifunc=python_complete#Complete
-
-" Enable heavy omni completion.
-if !exists('g:neocomplcache_force_omni_patterns')
-    let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:]*\t]\%(\.\|->\)\|\h\w*::'
-"let g:neocomplcache_force_omni_patterns.python3 = ''
-"let g:neocomplcache_force_omni_patterns.python = ''
-
 
 
 " Remappings for FSwitch
@@ -237,25 +187,25 @@ nmap <silent> <A-l> :wincmd l<CR>
 
 " Syntastic
 " ------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
 
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11'
-let g:syntastic_cpp_include_dirs = ['./lib/angelscript/include']
+"let g:syntastic_cpp_compiler = 'clang++'
+"let g:syntastic_cpp_compiler_options = ' -std=c++11'
+"let g:syntastic_cpp_include_dirs = ['./lib/angelscript/include']
 
-let g:syntastic_mode_map = {
-    \ "mode": "passive",
-    \ "active_filetypes": [],
-    \ "passive_filetypes": [] }
+"let g:syntastic_mode_map = {
+    "\ "mode": "passive",
+    "\ "active_filetypes": [],
+    "\ "passive_filetypes": [] }
 
-nmap <silent> <Leader>s :SyntasticCheck<CR>
+"nmap <silent> <Leader>s :SyntasticCheck<CR>
 
 
 " Airline

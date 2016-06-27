@@ -28,9 +28,6 @@
 [submodule "bundle/kraken.vim"]
 	path = bundle/kraken.vim
 	url = https://github.com/Limvot/kraken.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
@@ -52,6 +49,6 @@
 [submodule "bundle/neuro.vim"]
 	path = bundle/neuro.vim
 	url = git@github.com:lotusronin/neuro.vim.git
-[submodule "bundle/vim-lldb"]
-	path = bundle/vim-lldb
-	url = git@github.com:gilligan/vim-lldb.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = git@github.com:Valloric/YouCompleteMe.git
